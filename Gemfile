@@ -35,6 +35,28 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# Application specific gems
+# For authentication 
+gem 'devise'
+# For authorization and roles management
+gem "pundit"
+# For cloud messaging - push notifications
+gem 'fcm'
+# Rolify to manage the roles - not sure if we need to add this or not
+gem "rolify"
+# Background processes
+gem 'sidekiq'
+gem 'redis-namespace'
+gem 'sidekiq-scheduler'
+gem 'sidekiq-client-cli'
+gem "sidekiq-cron", "~> 0.6.3"
+# Cron jobs 
+gem 'whenever', :require => false
+
+
+
+
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
