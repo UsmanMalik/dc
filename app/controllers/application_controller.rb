@@ -11,6 +11,8 @@ class ApplicationController < ActionController::Base
   def after_sign_in_path_for(resource)
     if current_user.client_admin? 
       client_dashboard_index_path
+    elsif current_user.super_admin? 
+      super_dashboard_index_path
     else
       root_path
     end
