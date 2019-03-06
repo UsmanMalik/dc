@@ -14,6 +14,7 @@ class User < ApplicationRecord
     self.user_type = :client_admin
   end
 
+  
   def self.app_user?
     (:app_user).include?(self.user_type) 
   end

@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 20190224110508) do
   create_table "users", force: :cascade do |t|
     t.string   "first_name"
     t.string   "last_name"
-    t.integer  "user_type"
+    t.string   "user_type"
     t.string   "phone"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false

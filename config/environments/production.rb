@@ -83,4 +83,9 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+
+# Precompile additional assets
+config.assets.precompile += %w( .svg .otf .eot .woff .ttf )
+
 end
