@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_many :tasks
   has_many :groups
   has_one :app_user
+  has_many :submissions
 
 
   before_save :assign_user_type
