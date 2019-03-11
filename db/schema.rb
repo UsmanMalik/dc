@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190309203253) do
+ActiveRecord::Schema.define(version: 20190310200923) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,6 +58,32 @@ ActiveRecord::Schema.define(version: 20190309203253) do
     t.datetime "updated_at",  null: false
   end
 
+  create_table "submission_attachments", force: :cascade do |t|
+    t.integer  "submission_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["submission_id"], name: "index_submission_attachments_on_submission_id", using: :btree
+  end
+
+  create_table "submission_locations", force: :cascade do |t|
+    t.integer  "submission_id"
+    t.decimal  "latitude"
+    t.decimal  "longitude"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["submission_id"], name: "index_submission_locations_on_submission_id", using: :btree
+  end
+
+  create_table "submissions", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "task_id"
+    t.jsonb    "fields"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["task_id"], name: "index_submissions_on_task_id", using: :btree
+    t.index ["user_id"], name: "index_submissions_on_user_id", using: :btree
+  end
+
   create_table "task_group_memberships", force: :cascade do |t|
     t.integer  "task_id"
     t.integer  "group_id"
@@ -99,6 +125,10 @@ ActiveRecord::Schema.define(version: 20190309203253) do
   add_foreign_key "group_memberships", "groups"
   add_foreign_key "group_memberships", "users"
   add_foreign_key "groups", "users"
+  add_foreign_key "submission_attachments", "submissions"
+  add_foreign_key "submission_locations", "submissions"
+  add_foreign_key "submissions", "tasks"
+  add_foreign_key "submissions", "users"
   add_foreign_key "task_group_memberships", "tasks"
   add_foreign_key "tasks", "users"
 end
