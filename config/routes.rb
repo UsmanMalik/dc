@@ -16,4 +16,16 @@ Rails.application.routes.draw do
   namespace :app_user do
   end
 
+  namespace :api do
+    resources :sessions, only: [:create, :destroy]
+    # resources :messages, only: [:create]
+    # resources :locations, only: [:create]
+    resources :tasks, only: [:create, :index]  do
+      # collection { post :upload_image }
+      # get :already_exists
+    end
+    resources :register
+  end
+
+
 end
