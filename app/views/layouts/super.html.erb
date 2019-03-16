@@ -10,12 +10,24 @@
 
   <body>
 
-    <%= yield %>
+    <div id="wrapper">
+      <%= render partial: "partials/navigation/sidebar_navigation_super" %>
+        <div id="page-wrapper" class="gray-bg">
+          <div class="row border-bottom">
+          <%= render partial: "partials/navigation/top_navigation_super"%>
 
-    <%= javascript_include_tag 'super' %>
 
+           <%= yield %>
 
+          <%= render partial: "partials/footer/footer_super" %>
 
+          </div>
+        </div>
+    </div>
 
+      
+      
+      <%= javascript_include_tag 'super' %>
   </body>
+
 </html>
