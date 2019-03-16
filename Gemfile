@@ -27,7 +27,6 @@ gem 'coffee-rails', '~> 4.2'
 # gem 'active_model_serializers', '~> 0.10.0'
 gem 'fast_jsonapi'
 
-
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
