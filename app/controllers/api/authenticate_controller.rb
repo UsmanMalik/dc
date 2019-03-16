@@ -14,7 +14,7 @@ class Api::AuthenticateController < Api::BaseController
         password = params[:password]
         user = User.find_by_email(email) 
 
-        if user.valid_password?(password) unless user.nil?
+        if user.valid_password?(password) && user.present?
             # Send the the token back to the user
             # console "#{app_user}"
             if user.app_user.present?
