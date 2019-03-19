@@ -1,4 +1,4 @@
-class UserLocationsChannel < ApplicationCable::Channel
+class UserLocationChannel < ApplicationCable::Channel
   def subscribed
     stream_from "user_locations"
   end

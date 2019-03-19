@@ -23,7 +23,7 @@ gem 'coffee-rails', '~> 4.2'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
-gem 'redis', '~> 4.0'
+gem 'redis', '3.3.5'
 # For mobile api
 # gem 'active_model_serializers', '~> 0.10.0'
 gem 'fast_jsonapi'

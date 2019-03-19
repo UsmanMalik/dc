@@ -14,7 +14,7 @@ Rails.application.routes.draw do
 
   namespace :client do
     resources :dashboard, only: [:index]
-    resources :user_locations, only: [:index, :show]
+    resources :user_locations
   end
 
   namespace :app_user do
