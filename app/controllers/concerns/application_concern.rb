@@ -3,6 +3,7 @@ module ApplicationConcern
   
     included do
       before_action :authenticate_user!
+      before_action :log_user_event
     end
   
     def redirect_to_user_dashboard
@@ -18,6 +19,10 @@ module ApplicationConcern
     #   else
     #     redirect_to root_path
     #   end
+    end
+
+    def log_user_event
+      puts " ** Just to test concerns **"
     end
   
   end

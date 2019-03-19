@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+    # Serve websocket cable requests in-process
+  mount ActionCable.server => '/cable'
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
@@ -11,6 +14,7 @@ Rails.application.routes.draw do
 
   namespace :client do
     resources :dashboard, only: [:index]
+    resources :user_locations, only: [:index, :show]
   end
 
   namespace :app_user do

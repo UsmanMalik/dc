@@ -236,9 +236,10 @@ DEPENDENCIES
   jquery-ui-rails
   listen (~> 3.0.5)
   pg (>= 0.18, < 2.0)
-  puma (~> 3.0)
+  puma
   pundit
   rails (~> 5.0.7, >= 5.0.7.1)
+  redis (~> 4.0)
   redis-namespace
   rolify
   sass-rails (~> 5.0)

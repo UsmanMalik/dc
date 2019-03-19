@@ -13,7 +13,7 @@ gem 'rails', '~> 5.0.7', '>= 5.0.7.1'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
-gem 'puma', '~> 3.0'
+gem 'puma'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -23,6 +23,7 @@ gem 'coffee-rails', '~> 4.2'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
+gem 'redis', '~> 4.0'
 # For mobile api
 # gem 'active_model_serializers', '~> 0.10.0'
 gem 'fast_jsonapi'

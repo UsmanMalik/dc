@@ -10,6 +10,7 @@ class User < ApplicationRecord
   has_many :groups
   has_one :app_user
   has_many :submissions
+  has_many :user_locations
 
 
   # before_save :assign_user_type
