@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
+  layout "super"
 
   # GET /products
   # GET /products.json
@@ -26,15 +27,11 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
 
-    respond_to do |format|
       if @product.save
-        format.html { redirect_to @product, notice: 'Product was successfully created.' }
-        format.json { render :show, status: :created, location: @product }
-      else
-        format.html { render :new }
-        format.json { render json: @product.errors, status: :unprocessable_entity }
+        # ActionCable.server.broadcast 'some_channel',
+        # product_title: @product.title
+        # head :ok
       end
-    end
   end
 
   # PATCH/PUT /products/1

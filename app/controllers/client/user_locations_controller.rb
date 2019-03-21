@@ -15,11 +15,11 @@ class Client::UserLocationsController < Client::BaseController
         user_location = UserLocation.new(user_location_params)
         user_location.user = current_user
         if user_location.save
-            puts "Location saved ************"
-          ActionCable.server.broadcast "user_locations",
-            user_location: user_location.latitude,
-            user: user_location.user.first_name
-          head :ok
+        #     puts "Location saved ************"
+        #   ActionCable.server.broadcast "some_channel",
+        #     user_location: user_location.latitude,
+        #     user: user_location.user.first_name
+        #   head :ok
         end
     end
 

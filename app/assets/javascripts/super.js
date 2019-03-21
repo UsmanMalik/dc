@@ -17,5 +17,6 @@
 //= require plugins/metisMenu/jquery.metisMenu
 //= require plugins/slimscroll/jquery.slimscroll.min
 //= require inspinia
+//= require cable
 //= require plugins/pace/pace.min
 //= require_tree ./channels

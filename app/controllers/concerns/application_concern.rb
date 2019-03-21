@@ -2,7 +2,7 @@ module ApplicationConcern
     extend ActiveSupport::Concern
   
     included do
-      before_action :authenticate_user!
+      # before_action :authenticate_user!
       before_action :log_user_event
     end
   

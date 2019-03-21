@@ -23,7 +23,7 @@ gem 'coffee-rails', '~> 4.2'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
-gem 'redis', '3.3.5'
+gem 'redis', '~> 4.0'
 # For mobile api
 # gem 'active_model_serializers', '~> 0.10.0'
 gem 'fast_jsonapi'
@@ -55,13 +55,13 @@ gem 'fcm'
 # Rolify to manage the roles - not sure if we need to add this or not
 gem "rolify"
 # Background processes
-gem 'sidekiq'
-gem 'redis-namespace'
-gem 'sidekiq-scheduler'
-gem 'sidekiq-client-cli'
-gem "sidekiq-cron", "~> 0.6.3"
-# Cron jobs 
-gem 'whenever', :require => false
+# gem 'sidekiq'
+# gem 'redis-namespace'
+# gem 'sidekiq-scheduler'
+# gem 'sidekiq-client-cli'
+# gem "sidekiq-cron", "~> 0.6.3"
+# # Cron jobs 
+# gem 'whenever', :require => false
 
 
 

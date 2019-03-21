@@ -150,7 +150,7 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.10.0)
       ffi (~> 1.0)
-    redis (3.3.5)
+    redis (4.1.0)
     redis-namespace (1.6.0)
       redis (>= 3.0.4)
     responders (2.4.1)
@@ -239,7 +239,7 @@ DEPENDENCIES
   puma
   pundit
   rails (~> 5.0.7, >= 5.0.7.1)
-  redis (= 3.3.5)
+  redis (~> 4.0)
   redis-namespace
   rolify
   sass-rails (~> 5.0)
