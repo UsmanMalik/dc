@@ -28,9 +28,9 @@ class ProductsController < ApplicationController
     @product = Product.new(product_params)
 
       if @product.save
-        # ActionCable.server.broadcast 'some_channel',
-        # product_title: @product.title
-        # head :ok
+        ActionCable.server.broadcast 'some_channel',
+        product_title: @product.title
+        head :ok
       end
   end
 

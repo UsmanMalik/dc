@@ -873,8 +873,7 @@ h5 {
 }
 .navbar-default .nav > li > a:hover,
 .navbar-default .nav > li > a:focus {
-  /* background-color: #293846; */
-  background-color:  #003588;
+  background-color: #293846;
   color: white;
 }
 .nav .open > a,
@@ -894,8 +893,7 @@ h5 {
 }
 .navbar-default {
   background-color: transparent;
-  /* border-color: #2f4050; */
-  border-color: #15559A;
+  border-color: #2f4050;
 }
 .navbar-top-links li {
   display: inline-block;
@@ -1002,8 +1000,7 @@ h5 {
 }
 .nav-header {
   padding: 33px 25px;
-  /* background-color: #2f4050; */
-  background-color: #15559A;
+  background-color: #2f4050;
   background-image: url("patterns/header-profile.png");
 }
 .caret {
@@ -1023,13 +1020,11 @@ h5 {
   transition: all 0.4s;
 }
 ul.nav-second-level {
-  /* background: #293846; */
-  background: #003588;
+  background: #293846;
 }
 .nav > li.active {
   border-left: 4px solid #19aa8d;
-  /* background: #293846; */
-  background: #003588;
+  background: #293846;
 }
 .nav.nav-second-level > li.active {
   border: none;
@@ -1147,15 +1142,12 @@ body.mini-navbar .navbar-default .nav > li > .nav-second-level li a {
   position: absolute;
   left: 70px;
   top: 0;
-  /* background-color: #2f4050; */
-  background-color: #15559A;
+  background-color: #2f4050;
   padding: 10px 10px 10px 10px;
   font-size: 12px;
 }
 .canvas-menu.mini-navbar .nav-second-level {
-  /* background: #293846; */
-  background: #003588;
-
+  background: #293846;
 }
 .mini-navbar li.active .nav-second-level {
   left: 65px;
@@ -1382,8 +1374,7 @@ body.canvas-menu.mini-navbar .navbar-default .nav li .profile-element a span {
 }
 body.canvas-menu nav.navbar-static-side {
   z-index: 2001;
-  /* background: #2f4050; */
-  background: #15559A;
+  background: #2f4050;
   height: 100%;
   position: fixed;
   display: none;
@@ -2153,24 +2144,19 @@ button.dim:active:before {
 }
 /* TOOLTIPS */
 .tooltip-inner {
-  /* background-color: #2f4050; */
-  background-color: #15559A;
+  background-color: #2f4050;
 }
 .tooltip.top .tooltip-arrow {
-  /* border-top-color: #2f4050; */
-  border-top-color: #15559A;
+  border-top-color: #2f4050;
 }
 .tooltip.right .tooltip-arrow {
-  /* border-right-color: #2f4050; */
-  border-right-color: #15559A;
+  border-right-color: #2f4050;
 }
 .tooltip.bottom .tooltip-arrow {
-  /* border-bottom-color: #2f4050; */
-  border-bottom-color: #15559A;
+  border-bottom-color: #2f4050;
 }
 .tooltip.left .tooltip-arrow {
-  /* border-left-color: #2f4050; */
-  border-left-color: #15559A;
+  border-left-color: #2f4050;
 }
 /* EASY PIE CHART*/
 .easypiechart {
@@ -4314,8 +4300,7 @@ samp {
   padding: 12px 10px;
   margin: 0;
   border-radius: 0;
-  /* background: #2f4050; */
-  background: #15559A;
+  background: #2f4050;
   color: #fff;
   text-align: center;
   border-right: 1px solid #334556;
@@ -4388,8 +4373,7 @@ samp {
 }
 body {
   font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  /* background-color: #2f4050; */
-  background-color: #15559A;
+  background-color: #2f4050;
   font-size: 13px;
   color: #676a6c;
   overflow-x: hidden;
@@ -4409,8 +4393,7 @@ body.boxed-layout {
   background: url('patterns/shattered.png');
 }
 body.boxed-layout #wrapper {
-  /* background-color: #2f4050; */
-  background-color: #15559A;
+  background-color: #2f4050;
   max-width: 1200px;
   margin: 0 auto;
   -webkit-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.75);
@@ -6400,8 +6383,7 @@ dd.project-people {
 .article h1 {
   font-size: 48px;
   font-weight: 700;
-  /* color: #2f4050; */
-  color: #15559A;
+  color: #2f4050;
 }
 .article p {
   font-size: 15px;
@@ -6772,8 +6754,7 @@ body.body-small .vote-icon {
   display: block;
 }
 .small-chat-box .heading {
-  /* background: #2f4050; */
-  background: #15559A;
+  background: #2f4050;
   padding: 8px 15px;
   font-weight: bold;
   color: #fff;

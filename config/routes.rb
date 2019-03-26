@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  root "products#index"
+  root "static_content/landing_pages#index"
   resources :products
 
   namespace :super do
@@ -15,20 +15,54 @@ Rails.application.routes.draw do
   namespace :client do
     resources :dashboard, only: [:index]
     resources :user_locations
+    resources :tasks do 
+      resources :submissions, only: [:index, :destroy]
+      resources :insights, only:[:index]
+      get :export_data
+    end
+    # changed from users to app_users 
+    resources :app_users do
+      patch :activate
+      patch :deactivate
+    end
+
+    # I am not sure about this controller
+    resources :reporting, only:[:index] do
+      get :task_report
+    end
+    resources :messages, only: [:index, :create]
+    resources :group do
+      collection {post :update_members}
+      get :manage
+      get :get_data #what is this for? Not sure
+    end
+
+    resources :templates, only: [:index] do
+      resources :templates_content, only: [:index, :show, :new, :create]
+    end
+
+    resources :filters, only: [:index] do
+      collection{post :submit_filter}
+    end
+
+
+
   end
 
   namespace :app_user do
   end
 
+  namespace :static_content do
+    resources :landing_pages, only: [:index]
+  end
+
   namespace :api do
-    resources :sessions, only: [:create, :destroy]
-    # resources :messages, only: [:create]
-    # resources :locations, only: [:create]
-    resources :tasks, only: [:create, :index]  do
-      # collection { post :upload_image }
-      # get :already_exists
+    namespace :v1 do
+      resources :sessions, only: [:create, :destroy]
+      resources :tasks, only: [:create, :index]  do
+      end
+      resources :register
     end
-    resources :register
   end
 
 
