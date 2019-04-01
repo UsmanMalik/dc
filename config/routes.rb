@@ -13,7 +13,11 @@ Rails.application.routes.draw do
   end
 
   namespace :client do
-    resources :dashboard, only: [:index]
+    resources :dashboard, only: [:index] do
+      member do
+        get :check_js
+      end
+    end
     resources :user_locations
     resources :tasks do 
       resources :submissions, only: [:index, :destroy]

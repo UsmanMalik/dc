@@ -17,6 +17,8 @@ Rails.application.config.assets.precompile += %w( client.css )
 
 Rails.application.config.assets.precompile += %w( client.js )
 
+Rails.application.config.assets.precompile += %w( task/formbuilder.css )
+
 Rails.application.config.assets.precompile << Proc.new { |path|
     if path =~ /\.(eot|svg|ttf|woff)\z/
       true

@@ -54,6 +54,10 @@ gem "pundit"
 gem 'fcm'
 # Rolify to manage the roles - not sure if we need to add this or not
 gem "rolify"
+
+# Select 2 Rails 
+gem 'select2-rails'
+
 # Background processes
 # gem 'sidekiq'
 # gem 'redis-namespace'

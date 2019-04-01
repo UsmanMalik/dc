@@ -5,12 +5,12 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :fcm_users
-  has_many :tasks
-  has_many :groups
-  has_one :app_user
-  has_many :submissions
-  has_many :user_locations
+  has_many :fcm_users, dependent: :destroy 
+  has_many :tasks, dependent: :destroy 
+  has_many :groups, dependent: :destroy 
+  has_one :app_user, dependent: :destroy 
+  has_many :submissions, dependent: :destroy 
+  has_many :user_locations, dependent: :destroy 
 
 
   # before_save :assign_user_type
@@ -18,7 +18,7 @@ class User < ApplicationRecord
   after_create :set_user_role
 
   enum user_type: [:super_admin, :client_admin, :app_user]
-
+  enum user_status:  [:signup, :active, :pending, :suspended, :under_review, :blocked]
 
   # def assign_user_type
   #   # self.user_type = :client_admin
