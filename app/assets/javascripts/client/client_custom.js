@@ -25,12 +25,19 @@ $("#submit_task").click( function()
 
        }
        // If first is undefined then we can move from there
-       var first = $('#multi-group').val()[0];
+       var all_users_check = $('#multi-group').val()[0];
 
        group_ids = group_ids.toString();
-       var group_ids_array = group_ids.replace(/^,|,$/g,'');
-       console.log("group ids: " + group_ids + "  group_ids_array: "+ group_ids_array+ "   first: " + first);
-       return false;
+       var group_ids_array = group_ids.replace(/^,|,$/g,'').split(',');
+       console.log("group ids: " + group_ids + "  group_ids_array: "+ group_ids_array+ "   first: " + all_users_check);
+
+       if(all_users_check == ''){
+         // if the task is for all users we add -999 to the group ids so we know its for all the users
+         group_ids_array.push(-999);  
+       }
+       console.log("group ids: " + group_ids_array.length + "  group_ids_array: "+ group_ids_array.filter(Number) + "   first: " + all_users_check);
+
+      //  return false;
 
        
        if (title.length == 0) {
@@ -44,7 +51,7 @@ $("#submit_task").click( function()
           $.ajax({
             type: "POST",
             url: '/client/tasks' + "?&authenticity_token=" + token,
-            data: {task: {title: title, group_ids: group_ids_array, fields: task_payload}},
+            data: {task: {title: title, group_ids: group_ids_array.filter(Number), fields: task_payload}},
             dataType: 'json',
             success: function(msg) {
               location.href = msg.redirect_path;

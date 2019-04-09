@@ -10,15 +10,13 @@ class Client::TasksController < Client::BaseController
     
 	def create
 
-		if params[:task][:fields].present? and params[:task][:title].present?
+		if params[:task][:fields].present? and params[:task][:title].present? and params[:task][:group_ids].present?
 
 			if current_user.tasks.exists?(:title => params[:task][:title])
 				flash[F_PARA[:err]] = "Task title already exists please choose a new task name."
 				render json: {J_PARA[:redirect] => client_tasks_path}
 				return
 			end
-
-			# validate_task_fields('') # This function will be used to validate the fields.
 
 			label_name = []
 			json = JSON.parse(params[:task][:fields])
@@ -33,20 +31,20 @@ class Client::TasksController < Client::BaseController
 				return
 			end
 
-			# if params[:task][:group_id].nil? || params[:task][:group_id].blank?
-			# 	puts "group id: #{params[:task][:group_id]}"
-			# 	group_id = -999
-			# elsif
-			# 	group_id = params[:task][:group_id]
-			# end
-
 			@task = current_user.tasks.create(fields: JSON.parse(params[:task][:fields]), title: params[:task][:title], description: 'This is just a test des. IN MODEL')
 			if @task
-				# current_admin.send_form_updation_GCM(@task)
-				# Send GCM trigger async
-				# NewTaskWorker.perform_async(@task)
-				# NewTaskGcmTriggerWorker.perform_async(@task.id,current_admin.id)
-
+				group_ids = params[:task][:group_ids]
+				group_ids.each do |g_id|
+					# Need to find the group id of admin use gon gem to achieve this that can be the best solution or probably we don't need that 
+					if g_id == "-999" #For all users group and it is to be sent to all users						
+						TaskGroupMembership.create(task_id: @task.id, group_id: User.where(user_type: :super_admin).first.groups.first.id)
+					else
+						TaskGroupMembership.create(task_id: @task.id, group_id: g_id)
+					end
+				end
+				
+				# Send FCM trigger to the users
+				
 				flash[F_PARA[:info]] = "Task Created Successfully."
 				render json: {J_PARA[:redirect] => client_dashboard_index_path}, status: :created
 			else

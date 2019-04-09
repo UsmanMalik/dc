@@ -25,7 +25,7 @@ Rails.application.routes.draw do
       get :export_data
     end
     # changed from users to app_users 
-    resources :app_users do
+    resources :app_users, only:[] do
       patch :activate
       patch :deactivate
     end
@@ -49,11 +49,8 @@ Rails.application.routes.draw do
       collection{post :submit_filter}
     end
 
+    resources :users
 
-
-  end
-
-  namespace :app_user do
   end
 
   namespace :static_content do

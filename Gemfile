@@ -58,6 +58,16 @@ gem "rolify"
 # Select 2 Rails 
 gem 'select2-rails'
 
+
+gem 'sidekiq'
+gem 'redis-namespace'
+gem 'sidekiq-scheduler'
+gem 'sidekiq-client-cli'
+gem "sidekiq-cron", "~> 0.6.3"
+
+# pagination rails 
+gem 'will_paginate', '~> 3.1.0'
+
 # Background processes
 # gem 'sidekiq'
 # gem 'redis-namespace'
