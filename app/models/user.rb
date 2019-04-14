@@ -8,7 +8,7 @@ class User < ApplicationRecord
   has_many :fcm_users, dependent: :destroy 
   has_many :tasks, dependent: :destroy 
   has_many :groups, dependent: :destroy 
-  has_one :app_user, dependent: :destroy 
+  has_many :app_users, dependent: :destroy 
   has_many :submissions, dependent: :destroy 
   has_many :user_locations, dependent: :destroy 
 

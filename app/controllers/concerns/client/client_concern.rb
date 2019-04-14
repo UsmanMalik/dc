@@ -8,4 +8,8 @@ module Client::ClientConcern
     end
     
 
+    def generate_token
+        Digest::SHA1.hexdigest([Time.now, rand].join)
+    end
+
 end
