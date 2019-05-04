@@ -26,6 +26,7 @@
                <th>Title</th>
                <th>Description</th>
                <th>Members</th>
+               <th>Tasks attached with the group</th>
                <th>Actions</th>       
              </tr>
            </thead>
@@ -35,7 +36,8 @@
               <td><%= group.id %></td>
               <td><%= group.title %></td>
               <td><%= group.description %></td>
-              <td><%= group.users.count %></td>            
+              <td><%= "Group memberships count" %></td>
+              <td>Tasks attached with the group</td>         
               <td class="actions">
                 <%= link_to 'Manage', client_group_manage_path(group), class: 'btn btn-primary btn-sm ' %> 
                 <%= link_to 'Delete', client_group_path(group), method: :delete, data:{confirm: 'Are you sure?'}, class: 'btn btn-warning btn-sm ' %> 
@@ -62,7 +64,7 @@
         </div>
         <div class="modal-body">
 
-          <%= form_for @group, class: 'form-horizontal' do |group| %>
+          <%= form_for(@group, url: client_groups_path(@group)) do |group| %>
 
           <div class="form-group"><label class="col-lg-2 control-label">Title *</label>
 

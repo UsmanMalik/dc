@@ -35,7 +35,7 @@ Rails.application.routes.draw do
       get :task_report
     end
     resources :messages, only: [:index, :create]
-    resources :group do
+    resources :groups do
       collection {post :update_members}
       get :manage
       get :get_data #what is this for? Not sure
