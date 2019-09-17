@@ -1,11 +1,14 @@
 Rails.application.routes.draw do
 
+  get 'page/index'
+  root 'page#index'
+
     # Serve websocket cable requests in-process
   # mount ActionCable.server => '/cable'
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  root "static_content/landing_pages#index"
+  # root "static_content/landing_pages#index"
   resources :products
 
   namespace :super do

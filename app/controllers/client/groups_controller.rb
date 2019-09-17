@@ -26,7 +26,7 @@ class Client::GroupsController < Client::BaseController
           @all_users << {id: u.user.id.to_s, name: u.user.first_name.to_s + u.user.last_name.to_s, email: u.user.email.to_s}
         end
   
-      end
+    end
 
       def get_data
         

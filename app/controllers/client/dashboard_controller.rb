@@ -5,7 +5,7 @@ class Client::DashboardController < Client::BaseController
     end
 
     def check_js
-        @meow = 'hello oil'
+        @meow = 'hello  test'
         respond_to do |format|
             format.js
           end
